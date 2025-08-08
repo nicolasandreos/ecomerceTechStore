@@ -108,10 +108,10 @@ function showProducts() {
   let htmlContent = "";
 
   let filteredProducts = produtos.filter((produto) => {
-    searchedProducts = produto.nome
+    let searchedProducts = produto.nome
       .toLowerCase()
       .includes(input.value.toLowerCase());
-    categoryProducts = produto.categoria === actualCategory;
+    let categoryProducts = produto.categoria === actualCategory;
     return searchedProducts && (actualCategory === "todos" || categoryProducts);
   });
 
@@ -136,11 +136,7 @@ function showProducts() {
 }
 
 function modifyClass(button) {
-  buttons.forEach((btn) => {
-    if (btn.classList.contains("active")) {
-      btn.classList.remove("active");
-    }
-  });
+  buttons.forEach(btn => btn.classList.remove("active"));
   button.classList.add("active");
 }
 
